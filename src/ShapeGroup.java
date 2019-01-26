@@ -41,13 +41,28 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	
 	}
 	
+	/**
+	 * Get's the color of this ShapeGroup, only if the color of every element in it is the same.
+	 *
+	 * @return the color of every element if they're the same, otherwise -1.
+	 */
 	@Override
 	public int getColor() {
-		return 0;
+		int firstColor = get(0).getColor();
+		
+		for (Drawable drawable : this) {
+			if (drawable.getColor() != firstColor) {
+				return -1;
+			}
+		}
+		
+		return firstColor;
 	}
 	
 	@Override
 	public void setColor(int color) {
-	
+		for (Drawable drawable : this) {
+			drawable.setColor(color);
+		}
 	}
 }
