@@ -53,6 +53,8 @@ public class Drawing extends ArrayList<Drawable> {
 	
 	//TODO Create constructors that accept length and width as parameters
 	
+	//TODO Create a setImage() method
+	
 	/**
 	 * Updates the DrawingBoard based on the elements in this Drawing.
 	 */
