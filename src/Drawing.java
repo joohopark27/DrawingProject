@@ -13,8 +13,8 @@ public class Drawing extends ArrayList<Drawable> {
 	 * @param image           the filepath of the image to be used
 	 * @param initialCapacity the initial capacity of the list
 	 *
-	 * @throws IllegalArgumentException if the specified initial capacity
-	 *                                  is negative
+	 * @throws NullPointerException     if the filepath is invalid
+	 * @throws IllegalArgumentException if the specified initial capacity is negative
 	 */
 	public Drawing(String image, int initialCapacity) {
 		super(initialCapacity);
@@ -30,6 +30,7 @@ public class Drawing extends ArrayList<Drawable> {
 	 * @param image the filepath of the image to be used
 	 * @param c     the collection whose elements are to be placed into this Drawing
 	 *
+	 * @throws NullPointerException if the filepath is invalid
 	 * @throws NullPointerException if the specified collection is null
 	 */
 	public Drawing(String image, Collection<? extends Drawable> c) {
@@ -40,7 +41,10 @@ public class Drawing extends ArrayList<Drawable> {
 	
 	/**
 	 * Constructs an empty Drawing with an initial capacity of 10 Drawables and the supplied image.
+	 *
 	 * @param image the filepath of the image to be used
+	 *
+	 * @throws NullPointerException if the filepath is invalid
 	 */
 	public Drawing(String image) {
 		this.image = image;
