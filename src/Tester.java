@@ -5,6 +5,6 @@ public class Tester {
 		Scanner scan = new Scanner(System.in);
 		Drawing drawing = new Drawing("src/Will.jpg");
 		
-		drawing.add(new Rectangle(0x00ff00, 100, 100, 200, 300));
+		drawing.add(new Rectangle(0xffffff + 1000, 100, 100, 200, 300));
 	}
 }

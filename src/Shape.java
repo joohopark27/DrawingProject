@@ -36,7 +36,6 @@ public abstract class Shape implements Drawable {
 		return color;
 	}
 	
-	//TODO Make sure setColor is actually given a color as a parameter
 	private void setColor(int color) {
 		this.color = color;
 	}
