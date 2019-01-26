@@ -18,9 +18,7 @@ public abstract class Shape implements Drawable {
 	
 	@Override
 	public boolean within(DrawingBoard drawingBoard) {
-		if (x + getWidth() > drawingBoard.getWidth()) {
-			return false;
-		} else return y + getHeight() <= drawingBoard.getHeight();
+		return x + getWidth() <= drawingBoard.getWidth() && y + getHeight() <= drawingBoard.getHeight();
 	}
 	
 	public abstract int getWidth();
