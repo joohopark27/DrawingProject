@@ -3,8 +3,6 @@ TODO Make RightTriangle class
 TODO Make LineSegment class
 TODO (Optional) Make Circle class
 TODO (Optional) Make additional class
-
-TODO Allow Shapes to have their attributes changed
 */
 
 public abstract class Shape implements Drawable {
@@ -22,11 +20,7 @@ public abstract class Shape implements Drawable {
 	public boolean within(DrawingBoard drawingBoard) {
 		if (x + getWidth() > drawingBoard.getWidth()) {
 			return false;
-		} else if (y + getHeight() > drawingBoard.getHeight()) {
-			return false;
-		} else {
-			return true;
-		}
+		} else return y + getHeight() <= drawingBoard.getHeight();
 	}
 	
 	public abstract int getWidth();
