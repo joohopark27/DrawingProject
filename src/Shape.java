@@ -24,21 +24,16 @@ public abstract class Shape implements Drawable {
 	}
 	
 	public abstract int getWidth();
+	
 	public abstract int getHeight();
 	
-	public int getColor() {
-		return color;
-	}
-	
-	private void setColor(int color) {
-		this.color = color;
-	}
-	
+	@Override
 	public int getX() {
 		return x;
 	}
 	
-	private void setX(int x) {
+	@Override
+	public void setX(int x) {
 		if (x < 0) {
 			this.x = 0;
 		} else {
@@ -46,15 +41,27 @@ public abstract class Shape implements Drawable {
 		}
 	}
 	
+	@Override
 	public int getY() {
 		return y;
 	}
 	
-	private void setY(int y) {
+	@Override
+	public void setY(int y) {
 		if (y < 0) {
 			this.y = 0;
 		} else {
 			this.y = y;
 		}
+	}
+	
+	@Override
+	public int getColor() {
+		return color;
+	}
+	
+	@Override
+	public void setColor(int color) {
+		this.color = color;
 	}
 }

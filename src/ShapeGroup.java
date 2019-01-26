@@ -18,4 +18,36 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 		
 		return true;
 	}
+	
+	//TODO Implement the manipulation methods from Drawable
+	
+	@Override
+	public int getX() {
+		return 0;
+	}
+	
+	@Override
+	public void setX(int x) {
+	
+	}
+	
+	@Override
+	public int getY() {
+		return 0;
+	}
+	
+	@Override
+	public void setY(int y) {
+	
+	}
+	
+	@Override
+	public int getColor() {
+		return 0;
+	}
+	
+	@Override
+	public void setColor(int color) {
+	
+	}
 }

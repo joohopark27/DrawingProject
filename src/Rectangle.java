@@ -1,5 +1,3 @@
-//TODO Allow Rectangles to have their attributes changed
-
 public class Rectangle extends Shape {
 	private int height;
 	private int width;
