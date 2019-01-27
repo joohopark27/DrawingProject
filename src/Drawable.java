@@ -1,6 +1,4 @@
 public interface Drawable {
-	//TODO Add JavaDocs
-	
 	// Draws the object on DrawingBoard db
 	void drawOn(DrawingBoard db);
 	

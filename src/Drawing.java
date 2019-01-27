@@ -1,4 +1,4 @@
-//TODO Reassign accesses for all classes and methods
+//TODO (At End) Reassign accesses for all classes and methods
 //TODO (At End) Fix all JavaDocs
 
 import java.util.ArrayList;
@@ -108,7 +108,7 @@ public class Drawing extends ArrayList<Drawable> {
 	 * Updates the DrawingBoard based on the elements in this Drawing.
 	 */
 	public void refresh() {
-		//TODO Make old DrawingBoard disappear when new one appears
+		//TODO (Ask Coupland) Make old DrawingBoard disappear when new one appears
 		if (usesImage) {
 			drawingBoard = new DrawingBoard(image);
 		} else {
