@@ -10,26 +10,60 @@ public abstract class Shape implements Drawable {
 	private int x;
 	private int y;
 	
+	/**
+	 * Constructs a Shape.
+	 *
+	 * @param color the hexadecimal color
+	 * @param x     the x value of the upper left corner
+	 * @param y     the y value of the upper left corner
+	 */
 	public Shape(int color, int x, int y) {
 		setColor(color);
 		setX(x);
 		setY(y);
 	}
 	
+	/**
+	 * Determines if the Shape will fall entirely within the DrawingBoard.
+	 *
+	 * @param drawingBoard the DrawingBoard to test against
+	 *
+	 * @return true if the Drawable falls entirely within the DrawingBoard, otherwise false
+	 */
 	@Override
 	public boolean within(DrawingBoard drawingBoard) {
 		return x + getWidth() <= drawingBoard.getWidth() && y + getHeight() <= drawingBoard.getHeight();
 	}
 	
+	/**
+	 * Gets the total horizontal width of the Shape.
+	 *
+	 * @return the width
+	 */
 	public abstract int getWidth();
 	
+	/**
+	 * Gets the total vertical height of the Shape.
+	 *
+	 * @return the height
+	 */
 	public abstract int getHeight();
 	
+	/**
+	 * Gets the x coordinate of the upper left corner.
+	 *
+	 * @return the x coordinate of the upper left corner
+	 */
 	@Override
 	public int getX() {
 		return x;
 	}
 	
+	/**
+	 * Sets the x coordinate of the upper left corner.
+	 *
+	 * @param x the x coordinate of the upper left corner
+	 */
 	@Override
 	public void setX(int x) {
 		if (x < 0) {
@@ -39,11 +73,21 @@ public abstract class Shape implements Drawable {
 		}
 	}
 	
+	/**
+	 * Gets the y coordinate of the upper left corner.
+	 *
+	 * @return the y coordinate of the upper left corner
+	 */
 	@Override
 	public int getY() {
 		return y;
 	}
 	
+	/**
+	 * Sets the y coordinate of the upper left corner.
+	 *
+	 * @param y the y coordinate of the upper left corner
+	 */
 	@Override
 	public void setY(int y) {
 		if (y < 0) {
@@ -53,11 +97,21 @@ public abstract class Shape implements Drawable {
 		}
 	}
 	
+	/**
+	 * Gets the hexadecimal color.
+	 *
+	 * @return the hexadecimal color
+	 */
 	@Override
 	public int getColor() {
 		return color;
 	}
 	
+	/**
+	 * Sets the hexadecimal color.
+	 *
+	 * @param color the hexadecimal color
+	 */
 	@Override
 	public void setColor(int color) {
 		this.color = color;

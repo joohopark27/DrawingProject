@@ -1,5 +1,4 @@
 //TODO (At End) Reassign accesses for all classes and methods
-//TODO (At End) Fix all JavaDocs
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -52,9 +51,11 @@ public class Drawing extends ArrayList<Drawable> {
 	}
 	
 	/**
-	 * Constructs an empty list with the specified initial capacity.
+	 * Constructs a blank and empty Drawing with the specified initial capacity and specified dimensions.
 	 *
-	 * @param initialCapacity the initial capacity of the list
+	 * @param width           the width of the Drawing
+	 * @param height          the height of the Drawing
+	 * @param initialCapacity the initial capacity of the Drawing
 	 *
 	 * @throws IllegalArgumentException if the specified initial capacity is negative
 	 */
@@ -64,30 +65,11 @@ public class Drawing extends ArrayList<Drawable> {
 	}
 	
 	/**
-	 * Constructs an empty list with an initial capacity of ten.
-	 */
-	public Drawing(int width, int height) {
-		setDimensions(width, height);
-	}
-	
-	/**
-	 * Constructs a list containing the elements of the specified collection, in the order they are returned by the
-	 * collection's iterator.
+	 * Sets the dimensions of the Drawing. Removes the background image if there was one.
 	 *
-	 * @param c the collection whose elements are to be placed into this list
-	 *
-	 * @throws NullPointerException if the specified collection is null
+	 * @param width  the width of the Drawing
+	 * @param height the height of the Drawing
 	 */
-	public Drawing(int width, int height, Collection<? extends Drawable> c) {
-		super(c);
-		setDimensions(width, height);
-	}
-	
-	public void setImage(String image) {
-		this.image = image;
-		usesImage = true;
-	}
-	
 	public void setDimensions(int width, int height) {
 		if (height > 0) {
 			this.height = height;
@@ -105,7 +87,44 @@ public class Drawing extends ArrayList<Drawable> {
 	}
 	
 	/**
-	 * Updates the DrawingBoard based on the elements in this Drawing.
+	 * Constructs a blank and empty Drawing with an initial capacity of ten and the specified dimensions.
+	 *
+	 * @param width  the width of the Drawing
+	 * @param height the height of the Drawing
+	 */
+	public Drawing(int width, int height) {
+		setDimensions(width, height);
+	}
+	
+	/**
+	 * Constructs a blank Drawing containing the elements of the specified collection, in the order they are returned by
+	 * the collection's iterator.
+	 *
+	 * @param width  the width of the Drawing
+	 * @param height the height of the Drawing
+	 * @param c      the collection whose elements are to be placed into this list
+	 *
+	 * @throws NullPointerException if the specified collection is null
+	 */
+	public Drawing(int width, int height, Collection<? extends Drawable> c) {
+		super(c);
+		setDimensions(width, height);
+	}
+	
+	/**
+	 * Changes the background image of the Drawing. Adds one if there wasn't one already.
+	 *
+	 * @param image the filepath of the image to be used
+	 *
+	 * @throws NullPointerException if the filepath is invalid
+	 */
+	public void setImage(String image) {
+		this.image = image;
+		usesImage = true;
+	}
+	
+	/**
+	 * Renders the Drawing based on its current attributes.
 	 */
 	public void refresh() {
 		//TODO (Ask Coupland) Make old DrawingBoard disappear when new one appears
