@@ -1,5 +1,4 @@
 //TODO Reassign accesses for all classes and methods
-//TODO Correct wrapping of all JavaDocs
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,9 +23,8 @@ public class Drawing extends ArrayList<Drawable> {
 	}
 	
 	/**
-	 * Constructs a Drawing containing the elements of the specified
-	 * collection, in the order they are returned by the collection's
-	 * iterator, and the supplied image.
+	 * Constructs a Drawing containing the elements of the specified collection, in the order they are returned by the
+	 * collection's iterator, and the supplied image.
 	 *
 	 * @param image the filepath of the image to be used
 	 * @param c     the collection whose elements are to be placed into this Drawing

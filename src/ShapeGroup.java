@@ -1,6 +1,45 @@
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
+	private int x;
+	private int y;
+	
+	/**
+	 * Constructs an empty ShapeGroup with the specified initial capacity.
+	 *
+	 * @param initialCapacity the initial capacity of the ShapeGroup
+	 *
+	 * @throws IllegalArgumentException if the specified initial capacity is negative
+	 */
+	public ShapeGroup(int initialCapacity) {
+		super(initialCapacity);
+		this.x = 0;
+		this.y = 0;
+	}
+	
+	/**
+	 * Constructs an empty ShapeGroup with an initial capacity of ten.
+	 */
+	public ShapeGroup() {
+		this.x = 0;
+		this.y = 0;
+	}
+	
+	/**
+	 * Constructs a ShapeGroup containing the elements of the specified collection, in the order they are returned by
+	 * the collection's iterator.
+	 *
+	 * @param c the collection whose elements are to be placed into this ShapeGroup
+	 *
+	 * @throws NullPointerException if the specified collection is null
+	 */
+	public ShapeGroup(Collection<? extends Drawable> c) {
+		super(c);
+		this.x = 0;
+		this.y = 0;
+	}
+	
 	@Override
 	public void drawOn(DrawingBoard drawingBoard) {
 		for (Drawable drawable : this) {
@@ -23,7 +62,7 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	
 	@Override
 	public int getX() {
-		return 0;
+		return x;
 	}
 	
 	@Override
@@ -33,7 +72,7 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	
 	@Override
 	public int getY() {
-		return 0;
+		return y;
 	}
 	
 	@Override
@@ -42,9 +81,9 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	}
 	
 	/**
-	 * Get's the color of this ShapeGroup, only if the color of every element in it is the same.
+	 * Gets the color of every element in this ShapeGroup, only if the color of every element is the same.
 	 *
-	 * @return the color of every element if they're the same, otherwise -1.
+	 * @return the color of every element if they're the same, or -1.
 	 */
 	@Override
 	public int getColor() {
