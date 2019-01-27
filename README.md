@@ -6,8 +6,6 @@ This was literally just a Java program I'm writing for the practice. Don't actua
 
 ## Status
 ### Work In Progress
-Nothing's done.
+Backend is functional. Still missing a few children of Shape, but it works fine without them.
 
-Backend is functional, but is missing a bunch of stuff, and is still a mess.
-
-Frontend barely even exists.
+Frontend barely even exists. I probably won't even be making one.
