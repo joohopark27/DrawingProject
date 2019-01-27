@@ -58,8 +58,6 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 		return true;
 	}
 	
-	//TODO Implement the manipulation methods from Drawable
-	
 	@Override
 	public int getX() {
 		return x;
@@ -67,7 +65,13 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	
 	@Override
 	public void setX(int x) {
-	
+		int adjustment = x - this.x;
+		
+		for (Drawable drawable : this) {
+			drawable.setX(drawable.getX() + adjustment);
+		}
+		
+		this.x = x;
 	}
 	
 	@Override
@@ -77,7 +81,13 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	
 	@Override
 	public void setY(int y) {
-	
+		int adjustment = y - this.y;
+		
+		for (Drawable drawable : this) {
+			drawable.setY(drawable.getY() + adjustment);
+		}
+		
+		this.y = y;
 	}
 	
 	/**
