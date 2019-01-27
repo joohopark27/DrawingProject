@@ -25,11 +25,6 @@ public class Drawing extends ArrayList<Drawable> {
 		setImage(image);
 	}
 	
-	public void setImage(String image) {
-		this.image = image;
-		usesImage = true;
-	}
-	
 	/**
 	 * Constructs a Drawing containing the elements of the specified collection, in the order they are returned by the
 	 * collection's iterator, and the supplied image.
@@ -44,8 +39,6 @@ public class Drawing extends ArrayList<Drawable> {
 		super(c);
 		setImage(image);
 	}
-	
-	//TODO Create constructors that accept length and width as parameters
 	
 	/**
 	 * Constructs an empty Drawing with an initial capacity of 10 Drawables and the supplied image.
@@ -70,22 +63,6 @@ public class Drawing extends ArrayList<Drawable> {
 		setDimensions(width, height);
 	}
 	
-	public void setDimensions(int width, int height) {
-		if (height > 0) {
-			this.height = height;
-		} else {
-			this.height = 1;
-		}
-		
-		if (width > 0) {
-			this.width = width;
-		} else {
-			this.width = 1;
-		}
-		
-		usesImage = false;
-	}
-	
 	/**
 	 * Constructs an empty list with an initial capacity of ten.
 	 */
@@ -104,6 +81,27 @@ public class Drawing extends ArrayList<Drawable> {
 	public Drawing(int width, int height, Collection<? extends Drawable> c) {
 		super(c);
 		setDimensions(width, height);
+	}
+	
+	public void setImage(String image) {
+		this.image = image;
+		usesImage = true;
+	}
+	
+	public void setDimensions(int width, int height) {
+		if (height > 0) {
+			this.height = height;
+		} else {
+			this.height = 1;
+		}
+		
+		if (width > 0) {
+			this.width = width;
+		} else {
+			this.width = 1;
+		}
+		
+		usesImage = false;
 	}
 	
 	/**
