@@ -129,5 +129,10 @@ public class Tester {
 		
 		square.setWidth(25);
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		square.setSideLength(75);
+		drawing.refresh();
 	}
 }

@@ -3,14 +3,18 @@ public class Square extends Rectangle {
 		super(color, x, y, sideLength, sideLength);
 	}
 	
+	/**
+	 * Sets the side length. Both width and height.
+	 *
+	 * @param sideLength the sideLength
+	 */
 	@Override
-	public void setHeight(int height) {
-		super.setHeight(height);
-		super.setWidth(height);
+	public void setHeight(int sideLength) {
+		setSideLength(sideLength);
 	}
 	
 	@Override
-	public void setWidth(int width) {
-		setHeight(width);
+	public void setWidth(int sideLength) {
+		setSideLength(sideLength);
 	}
 }
