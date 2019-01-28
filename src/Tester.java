@@ -134,5 +134,14 @@ public class Tester {
 		
 		square.setSideLength(75);
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new RightTriangle(0xff0000, 300, 200, 80, 160, "LL"));
+		drawing.add(new RightTriangle(0x00ff00, 100, 300, 148, 87, "UR"));
+		drawing.add(new RightTriangle(0x0000ff, 350, 350, 104, 190, "LR"));
+		drawing.add(new RightTriangle(0xffff00, 50, 50, 183, 99, "UL"));
+		drawing.refresh();
 	}
 }
