@@ -1,6 +1,6 @@
 public class RightTriangle extends Shape {
-	private int width;
 	private int height;
+	private int width;
 	private String orientation;
 	
 	/**
@@ -14,10 +14,10 @@ public class RightTriangle extends Shape {
 	 * @param width       the width
 	 * @param orientation the corner of the right angle
 	 */
-	public RightTriangle(int color, int x, int y, int width, int height, String orientation) {
+	public RightTriangle(int color, int x, int y, int height, int width, String orientation) {
 		super(color, x, y);
-		setWidth(width);
 		setHeight(height);
+		setWidth(width);
 		setOrientation(orientation);
 	}
 	
