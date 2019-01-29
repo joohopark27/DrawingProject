@@ -138,10 +138,10 @@ public class Tester {
 		scan.nextLine();
 		
 		drawing.clear();
-		drawing.add(new RightTriangle(0xff0000, 300, 200, 80, 160, "LL"));
-		drawing.add(new RightTriangle(0x00ff00, 100, 300, 148, 87, "UR"));
-		drawing.add(new RightTriangle(0x0000ff, 350, 350, 104, 190, "LR"));
-		drawing.add(new RightTriangle(0xffff00, 50, 50, 183, 99, "UL"));
+		drawing.add(new RightTriangle(0xff0000, 300, 200, 160, 80, "LL"));
+		drawing.add(new RightTriangle(0x00ff00, 100, 300, 87, 148, "UR"));
+		drawing.add(new RightTriangle(0x0000ff, 350, 350, 190, 104, "LR"));
+		drawing.add(new RightTriangle(0xffff00, 50, 50, 99, 183, "UL"));
 		drawing.refresh();
 	}
 }

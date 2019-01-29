@@ -1,6 +1,4 @@
-public class RightTriangle extends Shape {
-	private int height;
-	private int width;
+public class RightTriangle extends Polygon {
 	private String orientation;
 	
 	/**
@@ -15,9 +13,7 @@ public class RightTriangle extends Shape {
 	 * @param orientation the corner of the right angle
 	 */
 	public RightTriangle(int color, int x, int y, int height, int width, String orientation) {
-		super(color, x, y);
-		setHeight(height);
-		setWidth(width);
+		super(color, x, y, height, width);
 		setOrientation(orientation);
 	}
 	
@@ -42,44 +38,6 @@ public class RightTriangle extends Shape {
 		} else {
 			this.orientation = "LL";
 		}
-	}
-	
-	/**
-	 * Gets the total horizontal width of the RightTriangle.
-	 *
-	 * @return the width
-	 */
-	@Override
-	public int getWidth() {
-		return width;
-	}
-	
-	/**
-	 * Sets the width of the Rectangle.
-	 *
-	 * @param width the width
-	 */
-	public void setWidth(int width) {
-		this.width = width;
-	}
-	
-	/**
-	 * Gets the total vertical height of the RightTriangle.
-	 *
-	 * @return the height
-	 */
-	@Override
-	public int getHeight() {
-		return height;
-	}
-	
-	/**
-	 * Sets the height of the Rectangle.
-	 *
-	 * @param height the height
-	 */
-	public void setHeight(int height) {
-		this.height = height;
 	}
 	
 	/**
@@ -108,39 +66,39 @@ public class RightTriangle extends Shape {
 	}
 	
 	private void drawUR(DrawingBoard drawingBoard) {
-		final double slope = ((double) width) / ((double) height);
+		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + width; row++) {
-			for (int column = (int) (getX() + (row - getY()) * slope); column <= getX() + width; column++) {
+		for (int row = getY(); row <= getY() + getWidth(); row++) {
+			for (int column = (int) (getX() + (row - getY()) * slope); column <= getX() + getWidth(); column++) {
 				drawingBoard.imgArray[row][column] = getColor();
 			}
 		}
 	}
 	
 	private void drawUL(DrawingBoard drawingBoard) {
-		final double slope = ((double) width) / ((double) height);
+		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + width; row++) {
-			for (int column = getX(); column <= getX() + width - (row - getY()) * slope; column++) {
+		for (int row = getY(); row <= getY() + getWidth(); row++) {
+			for (int column = getX(); column <= getX() + getWidth() - (row - getY()) * slope; column++) {
 				drawingBoard.imgArray[row][column] = getColor();
 			}
 		}
 	}
 	
 	private void drawLR(DrawingBoard drawingBoard) {
-		final double slope = ((double) width) / ((double) height);
+		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + width; row++) {
-			for (int column = (int) (getX() + width - (row - getY()) * slope); column <= getX() + width; column++) {
+		for (int row = getY(); row <= getY() + getWidth(); row++) {
+			for (int column = (int) (getX() + getWidth() - (row - getY()) * slope); column <= getX() + getWidth(); column++) {
 				drawingBoard.imgArray[row][column] = getColor();
 			}
 		}
 	}
 	
 	private void drawLL(DrawingBoard drawingBoard) {
-		final double slope = ((double) width) / ((double) height);
+		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + width; row++) {
+		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = getX(); column <= getX() + (row - getY()) * slope; column++) {
 				drawingBoard.imgArray[row][column] = getColor();
 			}
