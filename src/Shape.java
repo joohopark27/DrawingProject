@@ -31,7 +31,7 @@ public abstract class Shape implements Drawable {
 	 */
 	@Override
 	public boolean within(DrawingBoard drawingBoard) {
-		return x + getWidth() <= drawingBoard.getWidth() && y + getHeight() <= drawingBoard.getHeight();
+		return x + getWidth() <= drawingBoard.getWidth() && y + getHeight() <= drawingBoard.getHeight() && x >= 0 && y >= 0;
 	}
 	
 	/**
@@ -65,11 +65,7 @@ public abstract class Shape implements Drawable {
 	 */
 	@Override
 	public void setX(int x) {
-		if (x < 0) {
-			this.x = 0;
-		} else {
-			this.x = x;
-		}
+		this.x = x;
 	}
 	
 	/**
@@ -89,11 +85,7 @@ public abstract class Shape implements Drawable {
 	 */
 	@Override
 	public void setY(int y) {
-		if (y < 0) {
-			this.y = 0;
-		} else {
-			this.y = y;
-		}
+		this.y = y;
 	}
 	
 	/**
@@ -114,5 +106,11 @@ public abstract class Shape implements Drawable {
 	@Override
 	public void setColor(int color) {
 		this.color = color;
+	}
+	
+	protected void drawPixel(int row, int column, DrawingBoard drawingBoard) {
+		if (row < drawingBoard.getHeight() && column < drawingBoard.getWidth() && row >= 0 && column >= 0) {
+			drawingBoard.imgArray[row][column] = color;
+		}
 	}
 }

@@ -145,5 +145,15 @@ public class Tester {
 		drawing.add(new RightTriangle(0x0000ff, 350, 350, 190, 104, "LR"));
 		drawing.add(new RightTriangle(0xffff00, 50, 50, 99, 183, "UL"));
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.get(1).setY(500);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.get(2).setY(-20);
+		drawing.refresh();
 	}
 }

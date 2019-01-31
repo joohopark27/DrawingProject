@@ -47,21 +47,19 @@ public class RightTriangle extends Polygon {
 	 */
 	@Override
 	public void drawOn(DrawingBoard drawingBoard) {
-		if (within(drawingBoard)) {
-			switch (orientation) {
-				case "UR":
-					drawUR(drawingBoard);
-					break;
-				case "UL":
-					drawUL(drawingBoard);
-					break;
-				case "LR":
-					drawLR(drawingBoard);
-					break;
-				case "LL":
-					drawLL(drawingBoard);
-					break;
-			}
+		switch (orientation) {
+			case "UR":
+				drawUR(drawingBoard);
+				break;
+			case "UL":
+				drawUL(drawingBoard);
+				break;
+			case "LR":
+				drawLR(drawingBoard);
+				break;
+			case "LL":
+				drawLL(drawingBoard);
+				break;
 		}
 	}
 	
@@ -70,7 +68,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = (int) (getX() + (row - getY()) * slope); column <= getX() + getWidth(); column++) {
-				drawingBoard.imgArray[row][column] = getColor();
+				drawPixel(row, column, drawingBoard);
 			}
 		}
 	}
@@ -80,7 +78,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = getX(); column <= getX() + getWidth() - (row - getY()) * slope; column++) {
-				drawingBoard.imgArray[row][column] = getColor();
+				drawPixel(row, column, drawingBoard);
 			}
 		}
 	}
@@ -90,7 +88,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = (int) (getX() + getWidth() - (row - getY()) * slope); column <= getX() + getWidth(); column++) {
-				drawingBoard.imgArray[row][column] = getColor();
+				drawPixel(row, column, drawingBoard);
 			}
 		}
 	}
@@ -100,7 +98,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = getX(); column <= getX() + (row - getY()) * slope; column++) {
-				drawingBoard.imgArray[row][column] = getColor();
+				drawPixel(row, column, drawingBoard);
 			}
 		}
 	}

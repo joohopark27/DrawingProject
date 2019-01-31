@@ -19,11 +19,9 @@ public class Rectangle extends Polygon {
 	 */
 	@Override
 	public void drawOn(DrawingBoard drawingBoard) {
-		if (within(drawingBoard)) {
-			for (int row = getY(); row < getY() + getHeight(); row++) {
-				for (int column = getX(); column < getX() + getWidth(); column++) {
-					drawingBoard.imgArray[row][column] = getColor();
-				}
+		for (int row = getY(); row < getY() + getHeight(); row++) {
+			for (int column = getX(); column < getX() + getWidth(); column++) {
+				drawPixel(row, column, drawingBoard);
 			}
 		}
 	}
