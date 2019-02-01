@@ -1,5 +1,4 @@
 /*
-TODO Make LineSegment class
 TODO (Optional) Make Circle class
 TODO (Optional) Make additional class
 */

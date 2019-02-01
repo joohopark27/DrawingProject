@@ -155,5 +155,46 @@ public class Tester {
 		
 		drawing.get(2).setY(-20);
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new LineSegment(0xff0000, 20, 20, 200, 200));
+		drawing.add(new LineSegment(0x00ff00, 40, 20, 300, 200));
+		drawing.add(new LineSegment(0xffff00, 20, 40, 200, 300));
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new LineSegment(0xff0000, 400, 50, 50, 400));
+		drawing.add(new LineSegment(0x00ff00, 400, 70, 300, 400));
+		drawing.add(new LineSegment(0xffff00, 380, 50, 50, 150));
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new LineSegment(0xff0000, 50, 400, 400, 50));
+		drawing.add(new LineSegment(0x00ff00, 50, 380, 200, 50));
+		drawing.add(new LineSegment(0xffff00, 70, 400, 400, 200));
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new LineSegment(0xff0000, 400, 400, 50, 50));
+		drawing.add(new LineSegment(0x00ff00, 400, 380, 300, 50));
+		drawing.add(new LineSegment(0xffff00, 380, 400, 50, 300));
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new LineSegment(0xff0000, 50, 50, 50, 400));
+		drawing.add(new LineSegment(0x00ff00, 50, 400, 400, 400));
+		drawing.add(new LineSegment(0xffff00, 400, 400, 400, 50));
+		drawing.add(new LineSegment(0xff00ff, 400, 50, 50, 50));
+		drawing.refresh();
 	}
 }
