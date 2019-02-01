@@ -1,4 +1,4 @@
-# DrawingProject
+# drawing-project
 A simple drawing program
 
 ## Purpose
