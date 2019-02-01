@@ -18,11 +18,22 @@ public abstract class Polygon extends Shape {
 	}
 	
 	/**
+	 * Determines if the Polygon will fall entirely within the DrawingBoard.
+	 *
+	 * @param drawingBoard the DrawingBoard to test against
+	 *
+	 * @return true if the Polygon falls entirely within the DrawingBoard, otherwise false
+	 */
+	@Override
+	public boolean within(DrawingBoard drawingBoard) {
+		return getX() + getWidth() <= drawingBoard.getWidth() && getY() + getHeight() <= drawingBoard.getHeight() && getX() >= 0 && getY() >= 0;
+	}
+	
+	/**
 	 * Gets the total horizontal width of the Polygon.
 	 *
 	 * @return the width
 	 */
-	@Override
 	public int getWidth() {
 		return width;
 	}
@@ -32,7 +43,6 @@ public abstract class Polygon extends Shape {
 	 *
 	 * @return the height
 	 */
-	@Override
 	public int getHeight() {
 		return height;
 	}
