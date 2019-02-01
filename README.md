@@ -6,6 +6,6 @@ This was literally just a Java program I'm writing for the practice. Don't actua
 
 ## Status
 ### Work In Progress
-Backend is functional. Still missing a few children of Shape, but it works fine without them.
+Backend is functional. Still missing a couple children of Shape, but it works fine without them. They're optional anyways.
 
 Frontend barely even exists. I probably won't even be making one.
