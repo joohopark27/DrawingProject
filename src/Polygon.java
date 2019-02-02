@@ -26,7 +26,10 @@ public abstract class Polygon extends Shape {
 	 */
 	@Override
 	public boolean within(DrawingBoard drawingBoard) {
-		return getX() + getWidth() <= drawingBoard.getWidth() && getY() + getHeight() <= drawingBoard.getHeight() && getX() >= 0 && getY() >= 0;
+		return getX() + getWidth() <= drawingBoard.getWidth() &&
+				getY() + getHeight() <= drawingBoard.getHeight() &&
+				getX() >= 0 &&
+				getY() >= 0;
 	}
 	
 	/**

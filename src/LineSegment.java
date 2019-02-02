@@ -40,7 +40,10 @@ public class LineSegment extends Shape {
 	 */
 	@Override
 	public boolean within(DrawingBoard drawingBoard) {
-		return rightX() <= drawingBoard.getWidth() && bottomY() <= drawingBoard.getHeight() && leftX() >= 0 && topY() >= 0;
+		return rightX() <= drawingBoard.getWidth() &&
+				bottomY() <= drawingBoard.getHeight() &&
+				leftX() >= 0 &&
+				topY() >= 0;
 	}
 	
 	private int rightX() {
