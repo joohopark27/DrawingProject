@@ -205,5 +205,13 @@ public class Tester {
 		drawing.add(new Circle(0xff00ff, 450, 450, 125));
 		drawing.add(new Circle(0xffff00, 300, 100, -50));
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new GradientRectangle(0xff0000, 0xffff00, 250, 250, 100, 100));
+		drawing.add(new GradientRectangle(0x029837, 0xe1a22c, 150, 300, 145, 65));
+		drawing.add(new GradientRectangle(0x000000, 0xffffff, 500, 400, 75, 200));
+		drawing.refresh();
 	}
 }

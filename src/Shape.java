@@ -1,7 +1,3 @@
-/*
-TODO (Optional) Make GradientRectangle class
-*/
-
 public abstract class Shape implements Drawable {
 	private int color;
 	private int x;

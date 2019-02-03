@@ -5,7 +5,7 @@ A simple drawing program
 This was literally just a Java program I'm writing for the practice. Don't actually try to use it to draw anything, because it will be overly cumbersome, and it most certainly won't meet your needs.
 
 ## Status
-### Work In Progress
-Backend is functional. Still missing a child of Shape, but it works fine without it. It's optional anyways.
+### Finished
+Backend is functional.
 
 Frontend barely even exists. I probably won't even be making one.
