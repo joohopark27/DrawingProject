@@ -80,7 +80,7 @@ public abstract class Shape implements Drawable {
 		this.color = color;
 	}
 	
-	protected void drawPixel(int row, int column, DrawingBoard drawingBoard) {
+	protected void drawPixel(int color, int row, int column, DrawingBoard drawingBoard) {
 		if (row < drawingBoard.getHeight() && column < drawingBoard.getWidth() && row >= 0 && column >= 0) {
 			drawingBoard.imgArray[row][column] = color;
 		}

@@ -21,7 +21,7 @@ public class Rectangle extends Polygon {
 	public void drawOn(DrawingBoard drawingBoard) {
 		for (int row = getY(); row < getY() + getHeight(); row++) {
 			for (int column = getX(); column < getX() + getWidth(); column++) {
-				drawPixel(row, column, drawingBoard);
+				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
 	}

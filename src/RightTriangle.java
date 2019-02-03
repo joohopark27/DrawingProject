@@ -68,7 +68,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = (int) (getX() + (row - getY()) * slope); column <= getX() + getWidth(); column++) {
-				drawPixel(row, column, drawingBoard);
+				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
 	}
@@ -78,7 +78,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = getX(); column <= getX() + getWidth() - (row - getY()) * slope; column++) {
-				drawPixel(row, column, drawingBoard);
+				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
 	}
@@ -88,7 +88,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = (int) (getX() + getWidth() - (row - getY()) * slope); column <= getX() + getWidth(); column++) {
-				drawPixel(row, column, drawingBoard);
+				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
 	}
@@ -98,7 +98,7 @@ public class RightTriangle extends Polygon {
 		
 		for (int row = getY(); row <= getY() + getWidth(); row++) {
 			for (int column = getX(); column <= getX() + (row - getY()) * slope; column++) {
-				drawPixel(row, column, drawingBoard);
+				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
 	}
