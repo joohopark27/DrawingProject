@@ -196,5 +196,14 @@ public class Tester {
 		drawing.add(new LineSegment(0xffff00, 400, 400, 400, 50));
 		drawing.add(new LineSegment(0xff00ff, 400, 50, 50, 50));
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		drawing.add(new Circle(0xff0000, 250, 250, 50));
+		drawing.add(new Circle(0x00ff00, -50, 300, 100));
+		drawing.add(new Circle(0xff00ff, 450, 450, 125));
+		drawing.add(new Circle(0xffff00, 300, 100, -50));
+		drawing.refresh();
 	}
 }
