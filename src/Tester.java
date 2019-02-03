@@ -209,9 +209,25 @@ public class Tester {
 		scan.nextLine();
 		
 		drawing.clear();
-		drawing.add(new GradientRectangle(0xff0000, 0xffff00, 250, 250, 100, 100));
+		GradientRectangle gradient = new GradientRectangle(0xff0000, 0xffff00, 250, 250, 100, 100);
+		drawing.add(gradient);
 		drawing.add(new GradientRectangle(0x029837, 0xe1a22c, 150, 300, 145, 65));
 		drawing.add(new GradientRectangle(0x000000, 0xffffff, 500, 400, 75, 200));
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		gradient.setColor1(0x00ff00);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		gradient.setColor2(0x0000ff);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		gradient.setColor(0x00ffff);
 		drawing.refresh();
 	}
 }

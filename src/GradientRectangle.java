@@ -4,15 +4,15 @@ public class GradientRectangle extends Rectangle {
 	/**
 	 * Constructs a GradientRectangle.
 	 *
-	 * @param color  the hexadecimal color of the top of the rectangle
+	 * @param color1 the hexadecimal color of the top of the rectangle
 	 * @param color2 the hexadecimal color of the bottom of the rectangle
 	 * @param x      the x coordinate of the upper left corner
 	 * @param y      the y coordinate of the upper left corner
 	 * @param height the height
 	 * @param width  the width
 	 */
-	public GradientRectangle(int color, int color2, int x, int y, int height, int width) {
-		super(color, x, y, height, width);
+	public GradientRectangle(int color1, int color2, int x, int y, int height, int width) {
+		super(color1, x, y, height, width);
 		setColor2(color2);
 	}
 	
@@ -31,24 +31,34 @@ public class GradientRectangle extends Rectangle {
 		return (double) (getRed2() - getRed()) / getHeight();
 	}
 	
-	private int getRed() {
-		return getColor() % 0x000100;
-	}
-	
 	private double greenSlope() {
 		return (double) (getGreen2() - getGreen()) / getHeight();
 	}
 	
 	private int getGreen() {
-		return getColor() / 0x000100 % 0x000100;
+		return getColor1() / 0x000100 % 0x000100;
+	}
+	
+	/**
+	 * Gets the top color.
+	 *
+	 * @return the top color
+	 */
+	public int getColor1() {
+		return super.getColor();
+	}
+	
+	/**
+	 * Sets the top color.
+	 *
+	 * @param color1 the top color
+	 */
+	public void setColor1(int color1) {
+		super.setColor(color1);
 	}
 	
 	private double blueSlope() {
 		return (double) (getBlue2() - getBlue()) / getHeight();
-	}
-	
-	private int getBlue() {
-		return getColor() / 0x010000 % 0x000100;
 	}
 	
 	private int getRed2() {
@@ -61,6 +71,14 @@ public class GradientRectangle extends Rectangle {
 	
 	private int getBlue2() {
 		return getColor2() / 0x010000 % 0x000100;
+	}
+	
+	private int getBlue() {
+		return getColor1() / 0x010000 % 0x000100;
+	}
+	
+	private int getRed() {
+		return getColor1() % 0x000100;
 	}
 	
 	/**
@@ -79,5 +97,16 @@ public class GradientRectangle extends Rectangle {
 	 */
 	public void setColor2(int color2) {
 		this.color2 = color2;
+	}
+	
+	/**
+	 * Sets the hexadecimal color.
+	 *
+	 * @param color the hexadecimal color
+	 */
+	@Override
+	public void setColor(int color) {
+		setColor1(color);
+		setColor2(color);
 	}
 }
