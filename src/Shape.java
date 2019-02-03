@@ -1,6 +1,5 @@
 /*
-TODO (Optional) Make Circle class
-TODO (Optional) Make additional class
+TODO (Optional) Make GradientRectangle class
 */
 
 public abstract class Shape implements Drawable {
