@@ -66,8 +66,8 @@ public class RightTriangle extends Polygon {
 	private void drawUR(DrawingBoard drawingBoard) {
 		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + getHeight(); row++) {
-			for (int column = (int) (getX() + (row - getY()) * slope); column <= getX() + getWidth(); column++) {
+		for (int row = getY(); row < getY() + getHeight(); row++) {
+			for (int column = (int) (getX() + (row - getY()) * slope); column < getX() + getWidth(); column++) {
 				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
@@ -76,8 +76,8 @@ public class RightTriangle extends Polygon {
 	private void drawUL(DrawingBoard drawingBoard) {
 		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + getHeight(); row++) {
-			for (int column = getX(); column <= getX() + getWidth() - (row - getY()) * slope; column++) {
+		for (int row = getY(); row < getY() + getHeight(); row++) {
+			for (int column = getX(); column < getX() + getWidth() - (row - getY()) * slope; column++) {
 				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
@@ -86,8 +86,8 @@ public class RightTriangle extends Polygon {
 	private void drawLR(DrawingBoard drawingBoard) {
 		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + getHeight(); row++) {
-			for (int column = (int) (getX() + getWidth() - (row - getY()) * slope); column <= getX() + getWidth(); column++) {
+		for (int row = getY(); row < getY() + getHeight(); row++) {
+			for (int column = (int) (getX() + getWidth() - (row - getY()) * slope); column < getX() + getWidth(); column++) {
 				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}
@@ -96,8 +96,8 @@ public class RightTriangle extends Polygon {
 	private void drawLL(DrawingBoard drawingBoard) {
 		final double slope = (double) getWidth() / (double) getHeight();
 		
-		for (int row = getY(); row <= getY() + getHeight(); row++) {
-			for (int column = getX(); column <= getX() + (row - getY()) * slope; column++) {
+		for (int row = getY(); row < getY() + getHeight(); row++) {
+			for (int column = getX(); column < getX() + (row - getY()) * slope; column++) {
 				drawPixel(getColor(), row, column, drawingBoard);
 			}
 		}

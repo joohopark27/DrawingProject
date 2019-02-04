@@ -146,7 +146,9 @@ public class LineSegment extends Shape {
 		} else {
 			return getX2();
 		}
-	}	/**
+	}
+	
+	/**
 	 * Sets the y topmost coordinate.
 	 *
 	 * @param y the y topmost coordinate
@@ -170,12 +172,6 @@ public class LineSegment extends Shape {
 	private boolean positiveSlope() {
 		return ((getX2() > getX1()) == (getY2() > getY1()));
 	}
-	
-
-	
-
-	
-
 	
 	/**
 	 * Sets the x coordinate of the second point.
@@ -214,20 +210,14 @@ public class LineSegment extends Shape {
 		}
 	}
 	
-
-	
-
-	
-
-	
 	private void drawVertically(DrawingBoard drawingBoard) {
-		for (int row = topY(); row <= bottomY(); row++) {
+		for (int row = topY(); row < bottomY(); row++) {
 			drawPixel(getColor(), row, columnValue(row), drawingBoard);
 		}
 	}
 	
 	private void drawHorizontally(DrawingBoard drawingBoard) {
-		for (int column = leftX(); column <= rightX(); column++) {
+		for (int column = leftX(); column < rightX(); column++) {
 			drawPixel(getColor(), rowValue(column), column, drawingBoard);
 		}
 	}
