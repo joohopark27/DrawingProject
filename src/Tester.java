@@ -7,34 +7,40 @@ public class Tester {
 		Scanner scan = new Scanner(System.in);
 		Drawing drawing = new Drawing("src/Will.jpg");
 		
+		//Test making ShapeGroups
+		
 		ShapeGroup innerGroup = new ShapeGroup(3);
 		innerGroup.add(new Rectangle(0x0000ff, 100, 100, 50, 80));
-		innerGroup.add(new Rectangle(0x00ff00, 200, 150, 35, 60));
-		innerGroup.add(new Rectangle(0xff0000, 400, 300, 75, 45));
+		innerGroup.add(new GradientRectangle(0x00ff00, 0x924de7, 200, 150, 85, 60));
+		innerGroup.add(new Circle(0xff0000, 350, 100, 75));
 		
 		ShapeGroup outerGroup = new ShapeGroup();
-		outerGroup.add(new Rectangle(0xffff00, 300, 200, 30, 55));
+		outerGroup.add(new RightTriangle(0xffff00, 20, 340, 173, 125, "UL"));
 		outerGroup.add(innerGroup);
 		
-		drawing.add(new Square(0xff00ff, 450, 400, 20));
+		drawing.add(new Square(0xff00ff, 280, 320, 150));
 		drawing.add(outerGroup);
 		drawing.refresh();
 		
 		scan.nextLine();
 		
-		outerGroup.setX(100);
+		//Test moving ShapeGroups
+		
+		outerGroup.setX(120);
 		drawing.refresh();
 		
 		scan.nextLine();
 		
-		innerGroup.setY(150);
+		innerGroup.setY(175);
 		drawing.refresh();
 		
 		scan.nextLine();
+		
+		//Test ShapeGroup colors
 		
 		System.out.println(innerGroup.getColor());
 		innerGroup.setColor(0xffffff);
-		System.out.println(innerGroup.getColor());
+		System.out.println(Integer.toHexString(innerGroup.getColor()));
 		drawing.refresh();
 		
 		scan.nextLine();
@@ -43,6 +49,8 @@ public class Tester {
 		drawing.refresh();
 		
 		scan.nextLine();
+		
+		//Test changing Drawing image and dimensions
 		
 		drawing.setImage("src/Pope.jpg");
 		drawing.refresh();
@@ -59,30 +67,29 @@ public class Tester {
 		
 		scan.nextLine();
 		
-		drawing.setImage("src/Will.jpg");
-		drawing.refresh();
-		
-		scan.nextLine();
-		
-		drawing.get(0).setX(-400);
-		drawing.refresh();
-		
-		scan.nextLine();
-		
-		drawing.get(1).setX(-400);
-		drawing.refresh();
-		
-		scan.nextLine();
-		
 		drawing.setDimensions(-500, -400);
 		drawing.refresh();
 		
 		scan.nextLine();
 		
-		Rectangle rectangle = new Rectangle(0x00ffff, 200, 400, 50, 60);
-		drawing.clear();
-		drawing.add(rectangle);
+		//Test moving ShapeGroups offscreen
+		
 		drawing.setImage("src/Will.jpg");
+		drawing.get(0).setX(-400);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.get(1).setX(250);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		//Test resizing Rectangles
+		
+		drawing.clear();
+		Rectangle rectangle = new Rectangle(0x00ffff, 200, 400, 50, 60);
+		drawing.add(rectangle);
 		drawing.refresh();
 		
 		scan.nextLine();
@@ -117,6 +124,8 @@ public class Tester {
 		
 		scan.nextLine();
 		
+		//Test resizing Squares
+		
 		Square square = new Square(0x2938f0, 400, 200, 50);
 		drawing.clear();
 		drawing.add(square);
@@ -139,6 +148,8 @@ public class Tester {
 		
 		scan.nextLine();
 		
+		//Test RightTriangles
+		
 		drawing.clear();
 		drawing.add(new RightTriangle(0xff0000, 300, 200, 160, 80, "LL"));
 		drawing.add(new RightTriangle(0x00ff00, 100, 300, 87, 148, "UR"));
@@ -147,6 +158,8 @@ public class Tester {
 		drawing.refresh();
 		
 		scan.nextLine();
+		
+		//Test moving RightTriangles offscreen
 		
 		drawing.get(1).setY(500);
 		drawing.refresh();
@@ -157,6 +170,8 @@ public class Tester {
 		drawing.refresh();
 		
 		scan.nextLine();
+		
+		//Test LineSegments
 		
 		drawing.clear();
 		drawing.add(new LineSegment(0xff0000, 20, 20, 200, 200));
@@ -199,6 +214,8 @@ public class Tester {
 		
 		scan.nextLine();
 		
+		//Test moving LineSegments
+		
 		drawing.clear();
 		LineSegment line = new LineSegment(0xff0000, 20, 20, 200, 200);
 		drawing.add(line);
@@ -220,6 +237,8 @@ public class Tester {
 		
 		scan.nextLine();
 		
+		//Test Circles
+		
 		drawing.clear();
 		drawing.add(new Circle(0xff0000, 250, 250, 50));
 		drawing.add(new Circle(0x00ff00, -50, 300, 100));
@@ -229,6 +248,8 @@ public class Tester {
 		
 		scan.nextLine();
 		
+		//Test GradientRectangles
+		
 		drawing.clear();
 		GradientRectangle gradient = new GradientRectangle(0xff0000, 0xffff00, 250, 250, 100, 100);
 		drawing.add(gradient);
@@ -237,6 +258,8 @@ public class Tester {
 		drawing.refresh();
 		
 		scan.nextLine();
+		
+		//Test recoloring Gradient Rectangles
 		
 		gradient.setColor1(0x00ff00);
 		drawing.refresh();
