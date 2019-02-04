@@ -200,6 +200,27 @@ public class Tester {
 		scan.nextLine();
 		
 		drawing.clear();
+		LineSegment line = new LineSegment(0xff0000, 20, 20, 200, 200);
+		drawing.add(line);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		line.setX1(300);
+		line.setX2(25);
+		line.setY1(145);
+		line.setY2(335);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		line.setX(10);
+		line.setY(10);
+		drawing.refresh();
+		
+		scan.nextLine();
+		
+		drawing.clear();
 		drawing.add(new Circle(0xff0000, 250, 250, 50));
 		drawing.add(new Circle(0x00ff00, -50, 300, 100));
 		drawing.add(new Circle(0xff00ff, 450, 450, 125));
