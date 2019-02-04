@@ -273,5 +273,64 @@ public class Tester {
 		
 		gradient.setColor(0x00ffff);
 		drawing.refresh();
+		
+		scan.nextLine();
+		
+		//Draw Recognizer
+		
+		final int RED = 0xbb0000;
+		final int BLUE = 0x0099ff;
+		
+		drawing.clear();
+		drawing.setDimensions(1000, 875);
+		
+		ShapeGroup top = new ShapeGroup(7);
+		
+		ShapeGroup head = new ShapeGroup(2);
+		head.add(new RightTriangle(RED, 300, 100, 93, 200, "LR"));
+		head.add(new RightTriangle(RED, 500, 100, 93, 200, "LL"));
+		top.add(head);
+		
+		top.add(new LineSegment(RED, 95, 220, 905, 220));
+		
+		ShapeGroup shoulders = new ShapeGroup(2);
+		shoulders.add(new Square(RED, 95, 245, 120));
+		shoulders.add(new Square(RED, 785, 245, 120));
+		top.add(shoulders);
+		
+		ShapeGroup chest = new ShapeGroup(3);
+		chest.add(new RightTriangle(RED, 265, 245, 90, 60, "UR"));
+		chest.add(new Rectangle(RED, 325, 245, 90, 350));
+		chest.add(new RightTriangle(RED, 675, 245, 90, 60, "UL"));
+		top.add(chest);
+		
+		top.add(new LineSegment(RED, 230, 305, 275, 305));
+		top.add(new LineSegment(RED, 725, 305, 770, 305));
+		
+		top.add(new LineSegment(RED, 418, 356, 578, 356));
+		
+		drawing.add(top);
+		
+		ShapeGroup bottom = new ShapeGroup(4);
+		
+		ShapeGroup leftLeg = new ShapeGroup(3);
+		leftLeg.add(new GradientRectangle(RED, BLUE, 95, 420, 300, 120));
+		leftLeg.add(new Rectangle(BLUE, 95, 720, 50, 120));
+		leftLeg.add(new RightTriangle(BLUE, 215, 720, 50, 95, "LL"));
+		bottom.add(leftLeg);
+		
+		ShapeGroup rightLeg = new ShapeGroup(3);
+		rightLeg.add(new GradientRectangle(RED, BLUE, 785, 420, 300, 120));
+		rightLeg.add(new Rectangle(BLUE, 785, 720, 50, 120));
+		rightLeg.add(new RightTriangle(BLUE, 690, 720, 50, 95, "LR"));
+		bottom.add(rightLeg);
+		
+		bottom.add(new LineSegment(RED, 95, 392, 905, 392));
+		
+		bottom.add(new LineSegment(RED, 418, 425, 578, 425));
+		
+		drawing.add(bottom);
+		
+		drawing.refresh();
 	}
 }
