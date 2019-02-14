@@ -126,7 +126,7 @@ public class Drawing extends ArrayList<Drawable> {
 	/**
 	 * Renders the Drawing based on its current attributes.
 	 */
-	public void refresh() {
+	public void show() {
 		//TODO (Ask Coupland) Make old DrawingBoard disappear when new one appears
 		if (usesImage) {
 			drawingBoard = new DrawingBoard(image);
