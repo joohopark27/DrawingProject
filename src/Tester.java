@@ -36,16 +36,16 @@ public class Tester {
 		
 		scan.nextLine();
 		
+		((ShapeGroup) drawing.get(1)).get(0).setX(0);
+		drawing.show();
+		
+		scan.nextLine();
+		
 		//Test ShapeGroup colors
 		
 		System.out.println(innerGroup.getColor());
 		innerGroup.setColor(0xffffff);
 		System.out.println(Integer.toHexString(innerGroup.getColor()));
-		drawing.show();
-		
-		scan.nextLine();
-		
-		((ShapeGroup) drawing.get(1)).get(0).setX(0);
 		drawing.show();
 		
 		scan.nextLine();
