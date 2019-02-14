@@ -13,7 +13,7 @@ Since Drawing is an `ArrayList`, you can treat it as such, with all the standard
 It can only contain `Shapes` and `ShapeGroups`.
 
 Drawing also contains a few additional methods to do things like set the background image or the dimensions.
-There's also `refresh()` which renders the drawing. You have to call this whenever you want to update what's on the screen.
+There's also `show()` which renders the drawing. You have to call this whenever you want to update what's on the screen.
 
 ### Shapes
 * `Shape` (abstract)
