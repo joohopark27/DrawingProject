@@ -100,7 +100,21 @@ public class GradientRectangle extends Rectangle {
 	}
 	
 	/**
-	 * Sets the hexadecimal color.
+	 * Gets the hexadecimal color of the entire rectangle only if it is the same color all the way through.
+	 *
+	 * @return the hexadecimal color if the color is the same all the way through, otherwise -1
+	 */
+	@Override
+	public int getColor() {
+		if (getColor1() == getColor2()) {
+			return getColor1();
+		} else {
+			return -1;
+		}
+	}
+	
+	/**
+	 * Sets the hexadecimal color of the entire rectangle.
 	 *
 	 * @param color the hexadecimal color
 	 */

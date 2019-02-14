@@ -262,16 +262,19 @@ public class Tester {
 		//Test recoloring Gradient Rectangles
 		
 		gradient.setColor1(0x00ff00);
+		System.out.println(gradient.getColor());
 		drawing.show();
 		
 		scan.nextLine();
 		
 		gradient.setColor2(0x0000ff);
+		System.out.println(gradient.getColor());
 		drawing.show();
 		
 		scan.nextLine();
 		
 		gradient.setColor(0x00ffff);
+		System.out.println(Integer.toHexString(gradient.getColor()));
 		drawing.show();
 		
 		scan.nextLine();
