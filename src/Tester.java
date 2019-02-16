@@ -27,16 +27,29 @@ public class Tester {
 		//Test moving ShapeGroups
 		
 		outerGroup.setX(120);
+		System.out.println(outerGroup.getX());
 		drawing.show();
 		
 		scan.nextLine();
 		
-		innerGroup.setY(175);
+		outerGroup.setX(0);
+		outerGroup.setY(0);
+		System.out.println(outerGroup.getX());
+		System.out.println(outerGroup.getY());
 		drawing.show();
 		
 		scan.nextLine();
 		
-		((ShapeGroup) drawing.get(1)).get(0).setX(0);
+		innerGroup.setY(300);
+		System.out.println(innerGroup.getY());
+		drawing.show();
+		
+		scan.nextLine();
+		
+		System.out.println(outerGroup.getX());
+		((ShapeGroup) drawing.get(1)).get(0).setX(200);
+		System.out.println(outerGroup.getX());
+		drawing.add(new Square(0xff0000, 80, 275, 20));
 		drawing.show();
 		
 		scan.nextLine();
@@ -80,7 +93,7 @@ public class Tester {
 		
 		scan.nextLine();
 		
-		drawing.get(1).setX(250);
+		drawing.get(1).setX(320);
 		drawing.show();
 		
 		scan.nextLine();
