@@ -12,7 +12,7 @@ public class Tester {
 		ShapeGroup innerGroup = new ShapeGroup(3);
 		innerGroup.add(new Rectangle(0x0000ff, 100, 100, 50, 80));
 		innerGroup.add(new GradientRectangle(0x00ff00, 0x924de7, 200, 150, 85, 60));
-		innerGroup.add(new Circle(0xff0000, 350, 100, 75));
+		innerGroup.add(new Circle(0xff0000, 350, 50, 75));
 		
 		ShapeGroup outerGroup = new ShapeGroup();
 		outerGroup.add(new RightTriangle(0xffff00, 20, 340, 173, 125, "UL"));
@@ -255,8 +255,20 @@ public class Tester {
 		drawing.clear();
 		drawing.add(new Circle(0xff0000, 250, 250, 50));
 		drawing.add(new Circle(0x00ff00, -50, 300, 100));
-		drawing.add(new Circle(0xff00ff, 450, 450, 125));
+		drawing.add(new Circle(0xff00ff, 350, 350, 125));
 		drawing.add(new Circle(0xffff00, 300, 100, -50));
+		drawing.show();
+		
+		scan.nextLine();
+		
+		drawing.clear();
+		Circle circle = new Circle(0x00ff00, 200, 200, 100);
+		drawing.add(circle);
+		drawing.show();
+		
+		scan.nextLine();
+		
+		circle.setRadius(200);
 		drawing.show();
 		
 		scan.nextLine();

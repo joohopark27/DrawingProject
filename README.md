@@ -19,10 +19,10 @@ There's also `show()` which renders the drawing. You have to call this whenever 
 * `Shape` (abstract)
     * `Polygon` (abstract)
         * `Rectangle`
-            * `Square`
             * `GradientRectangle`
+            * `Square`
+                * `Circle`
         * `RightTriangle`
-    * `Circle`
     * `LineSegment`
 
 ### ShapeGroups
