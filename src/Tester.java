@@ -179,7 +179,7 @@ public class Tester {
 		
 		scan.nextLine();
 		
-		drawing.get(2).setY(-20);
+		drawing.get(2).setY(-100);
 		drawing.show();
 		
 		scan.nextLine();
