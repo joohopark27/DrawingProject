@@ -23,7 +23,7 @@ public class Circle extends Shape {
 	public void drawOn(DrawingBoard drawingBoard) {
 		for (int row = getY() - getRadius(); row < getY() + getRadius(); row++) {
 			for (int column = getX() - getRadius(); column < getX() + getRadius(); column++) {
-				drawPixel(getColor(), row, column, drawingBoard);
+				drawPixel(row, column, drawingBoard);
 			}
 		}
 	}
@@ -51,9 +51,9 @@ public class Circle extends Shape {
 	}
 	
 	@Override
-	protected void drawPixel(int color, int row, int column, DrawingBoard drawingBoard) {
+	protected void drawPixel(int row, int column, DrawingBoard drawingBoard) {
 		if (getRadius() > Math.hypot(column - getX(), row - getY())) {
-			super.drawPixel(getColor(), row, column, drawingBoard);
+			super.drawPixel(row, column, drawingBoard);
 		}
 	}
 	

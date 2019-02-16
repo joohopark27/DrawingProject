@@ -212,13 +212,13 @@ public class LineSegment extends Shape {
 	
 	private void drawVertically(DrawingBoard drawingBoard) {
 		for (int row = topY(); row < bottomY(); row++) {
-			drawPixel(getColor(), row, columnValue(row), drawingBoard);
+			drawPixel(row, columnValue(row), drawingBoard);
 		}
 	}
 	
 	private void drawHorizontally(DrawingBoard drawingBoard) {
 		for (int column = leftX(); column < rightX(); column++) {
-			drawPixel(getColor(), rowValue(column), column, drawingBoard);
+			drawPixel(rowValue(column), column, drawingBoard);
 		}
 	}
 	

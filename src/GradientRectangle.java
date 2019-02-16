@@ -17,14 +17,14 @@ public class GradientRectangle extends Rectangle {
 	}
 	
 	@Override
-	protected void drawPixel(int color, int row, int column, DrawingBoard drawingBoard) {
+	protected void drawPixel(int row, int column, DrawingBoard drawingBoard) {
 		final int newRed = (int) (redSlope() * (row - getY())) + getRed();
 		final int newGreen = (int) (greenSlope() * (row - getY())) + getGreen();
 		final int newBlue = (int) (blueSlope() * (row - getY())) + getBlue();
 		
 		final int newColor = newRed + newGreen * 0x000100 + newBlue * 0x010000;
 		
-		super.drawPixel(newColor, row, column, drawingBoard);
+		super.drawPixel(row, column, drawingBoard, newColor);
 	}
 	
 	private double redSlope() {
