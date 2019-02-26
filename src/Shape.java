@@ -1,10 +1,3 @@
-/*
-TODO Make RightTriangle class
-TODO Make LineSegment class
-TODO (Optional) Make Circle class
-TODO (Optional) Make additional class
-*/
-
 public abstract class Shape implements Drawable {
 	private int color;
 	private int x;
@@ -14,8 +7,8 @@ public abstract class Shape implements Drawable {
 	 * Constructs a Shape.
 	 *
 	 * @param color the hexadecimal color
-	 * @param x     the x value of the upper left corner
-	 * @param y     the y value of the upper left corner
+	 * @param x     the x value
+	 * @param y     the y value
 	 */
 	public Shape(int color, int x, int y) {
 		setColor(color);
@@ -24,35 +17,9 @@ public abstract class Shape implements Drawable {
 	}
 	
 	/**
-	 * Determines if the Shape will fall entirely within the DrawingBoard.
+	 * Gets the x coordinate.
 	 *
-	 * @param drawingBoard the DrawingBoard to test against
-	 *
-	 * @return true if the Drawable falls entirely within the DrawingBoard, otherwise false
-	 */
-	@Override
-	public boolean within(DrawingBoard drawingBoard) {
-		return x + getWidth() <= drawingBoard.getWidth() && y + getHeight() <= drawingBoard.getHeight();
-	}
-	
-	/**
-	 * Gets the total horizontal width of the Shape.
-	 *
-	 * @return the width
-	 */
-	public abstract int getWidth();
-	
-	/**
-	 * Gets the total vertical height of the Shape.
-	 *
-	 * @return the height
-	 */
-	public abstract int getHeight();
-	
-	/**
-	 * Gets the x coordinate of the upper left corner.
-	 *
-	 * @return the x coordinate of the upper left corner
+	 * @return the x coordinate
 	 */
 	@Override
 	public int getX() {
@@ -60,23 +27,19 @@ public abstract class Shape implements Drawable {
 	}
 	
 	/**
-	 * Sets the x coordinate of the upper left corner.
+	 * Sets the x coordinate.
 	 *
-	 * @param x the x coordinate of the upper left corner
+	 * @param x the x coordinate
 	 */
 	@Override
 	public void setX(int x) {
-		if (x < 0) {
-			this.x = 0;
-		} else {
-			this.x = x;
-		}
+		this.x = x;
 	}
 	
 	/**
-	 * Gets the y coordinate of the upper left corner.
+	 * Gets the y coordinate.
 	 *
-	 * @return the y coordinate of the upper left corner
+	 * @return the y coordinate
 	 */
 	@Override
 	public int getY() {
@@ -84,17 +47,13 @@ public abstract class Shape implements Drawable {
 	}
 	
 	/**
-	 * Sets the y coordinate of the upper left corner.
+	 * Sets the y coordinate.
 	 *
-	 * @param y the y coordinate of the upper left corner
+	 * @param y the y coordinate
 	 */
 	@Override
 	public void setY(int y) {
-		if (y < 0) {
-			this.y = 0;
-		} else {
-			this.y = y;
-		}
+		this.y = y;
 	}
 	
 	/**
@@ -115,5 +74,15 @@ public abstract class Shape implements Drawable {
 	@Override
 	public void setColor(int color) {
 		this.color = color;
+	}
+	
+	protected void drawPixel(int row, int column, DrawingBoard drawingBoard) {
+		drawPixel(row, column, drawingBoard, getColor());
+	}
+	
+	protected final void drawPixel(int row, int column, DrawingBoard drawingBoard, int color) {
+		if (row < drawingBoard.getHeight() && column < drawingBoard.getWidth() && row >= 0 && column >= 0) {
+			drawingBoard.imgArray[row][column] = color;
+		}
 	}
 }

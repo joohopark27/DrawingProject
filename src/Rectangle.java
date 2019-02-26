@@ -1,7 +1,4 @@
-public class Rectangle extends Shape {
-	private int height;
-	private int width;
-	
+public class Rectangle extends Polygon {
 	/**
 	 * Constructs a Rectangle.
 	 *
@@ -12,9 +9,7 @@ public class Rectangle extends Shape {
 	 * @param width  the width
 	 */
 	public Rectangle(int color, int x, int y, int height, int width) {
-		super(color, x, y);
-		setHeight(height);
-		setWidth(width);
+		super(color, x, y, height, width);
 	}
 	
 	/**
@@ -24,50 +19,10 @@ public class Rectangle extends Shape {
 	 */
 	@Override
 	public void drawOn(DrawingBoard drawingBoard) {
-		if (within(drawingBoard)) {
-			for (int row = getY(); row < getY() + height; row++) {
-				for (int column = getX(); column < getX() + width; column++) {
-					drawingBoard.imgArray[row][column] = getColor();
-				}
+		for (int row = getY(); row < getY() + getHeight(); row++) {
+			for (int column = getX(); column < getX() + getWidth(); column++) {
+				drawPixel(row, column, drawingBoard);
 			}
 		}
-	}
-	
-	/**
-	 * Gets the total horizontal width of the Shape.
-	 *
-	 * @return the width
-	 */
-	@Override
-	public int getWidth() {
-		return width;
-	}
-	
-	/**
-	 * Gets the total vertical height of the Shape.
-	 *
-	 * @return the height
-	 */
-	@Override
-	public int getHeight() {
-		return height;
-	}
-	
-	/**
-	 * Sets the height of the Rectangle.
-	 *
-	 * @param height the height
-	 */
-	public void setHeight(int height) {
-		this.height = height;
-	}
-	
-	/**
-	 * Sets the width of the Rectangle.
-	 *
-	 * @param width the width
-	 */
-	public void setWidth(int width) {
-		this.width = width;
 	}
 }
