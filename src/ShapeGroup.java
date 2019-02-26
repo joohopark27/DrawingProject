@@ -2,9 +2,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
-	private int x;
-	private int y;
-	
 	/**
 	 * Constructs an empty ShapeGroup with the specified initial capacity.
 	 *
@@ -14,16 +11,12 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	 */
 	public ShapeGroup(int initialCapacity) {
 		super(initialCapacity);
-		this.x = 0;
-		this.y = 0;
 	}
 	
 	/**
 	 * Constructs an empty ShapeGroup with an initial capacity of ten.
 	 */
 	public ShapeGroup() {
-		this.x = 0;
-		this.y = 0;
 	}
 	
 	/**
@@ -36,8 +29,6 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	 */
 	public ShapeGroup(Collection<? extends Drawable> c) {
 		super(c);
-		this.x = 0;
-		this.y = 0;
 	}
 	
 	/**
@@ -71,12 +62,24 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	}
 	
 	/**
-	 * Gets the x coordinate of the upper left corner. By default it's zero.
+	 * Gets the x coordinate of the upper left corner. Returns 0 if this ShapeGroup is empty.
 	 *
 	 * @return the x coordinate of the upper left corner
 	 */
 	@Override
 	public int getX() {
+		int x;
+		
+		try {
+			x = get(0).getX();
+		} catch (IndexOutOfBoundsException exception) {
+			x = 0;
+		}
+		
+		for (Drawable drawable : this) {
+			x = Integer.min(x, drawable.getX());
+		}
+		
 		return x;
 	}
 	
@@ -88,22 +91,32 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	 */
 	@Override
 	public void setX(int x) {
-		int adjustment = x - this.x;
+		final int adjustment = x - getX();
 		
 		for (Drawable drawable : this) {
 			drawable.setX(drawable.getX() + adjustment);
 		}
-		
-		this.x = x;
 	}
 	
 	/**
-	 * Gets the y coordinate of the upper left corner. By default it's zero.
+	 * Gets the y coordinate of the upper left corner. Returns 0 if this ShapeGroup is empty.
 	 *
 	 * @return the y coordinate of the upper left corner
 	 */
 	@Override
 	public int getY() {
+		int y;
+		
+		try {
+			y = get(0).getY();
+		} catch (IndexOutOfBoundsException exception) {
+			y = 0;
+		}
+		
+		for (Drawable drawable : this) {
+			y = Integer.min(y, drawable.getY());
+		}
+		
 		return y;
 	}
 	
@@ -115,13 +128,11 @@ public class ShapeGroup extends ArrayList<Drawable> implements Drawable {
 	 */
 	@Override
 	public void setY(int y) {
-		int adjustment = y - this.y;
+		final int adjustment = y - getY();
 		
 		for (Drawable drawable : this) {
 			drawable.setY(drawable.getY() + adjustment);
 		}
-		
-		this.y = y;
 	}
 	
 	/**

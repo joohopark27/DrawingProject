@@ -40,4 +40,13 @@ public class Square extends Rectangle {
 		super.setWidth(sideLength);
 		super.setHeight(sideLength);
 	}
+	
+	/**
+	 * Gets the side length.
+	 *
+	 * @return the side length
+	 */
+	public int getSideLength() {
+		return getHeight();
+	}
 }

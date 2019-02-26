@@ -1,5 +1,3 @@
-//TODO (At End) Reassign accesses for all classes and methods
-
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -126,8 +124,7 @@ public class Drawing extends ArrayList<Drawable> {
 	/**
 	 * Renders the Drawing based on its current attributes.
 	 */
-	public void refresh() {
-		//TODO (Ask Coupland) Make old DrawingBoard disappear when new one appears
+	public void show() {
 		if (usesImage) {
 			drawingBoard = new DrawingBoard(image);
 		} else {

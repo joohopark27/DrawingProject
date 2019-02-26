@@ -1,3 +1,8 @@
+/*
+MIT License described in LICENSE does not apply to this file or its contents.
+I (GitHub user yottalogical) am using it with permission of the original author, but that permission does not automatically extend to others.
+*/
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
